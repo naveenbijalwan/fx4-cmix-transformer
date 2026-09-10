@@ -1,0 +1,35 @@
+# Native build products
+*.o
+*.o.tmp
+cmix
+cmix_*
+# the 1% benchmark binary and its driver object -- build artifacts, and
+# prefix_bench was committed once at 427,952 bytes
+prefix_bench
+prefix_driver.o
+*.exe
+byte_vocab
+fxot_analyze
+
+# tools/create_judging_entry.sh output (default /dist/, or wherever pointed)
+/dist/
+/submission/Entries/
+
+# Runtime scratch files
+ppm.temp
+*.partial
+.dict
+*.temp
+*.fxot
+/run/
+/results/
+/research/
+/data/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Metadata copied from macOS archives
+._*
+.DS_Store

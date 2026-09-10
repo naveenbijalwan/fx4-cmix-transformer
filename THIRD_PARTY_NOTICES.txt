@@ -1,0 +1,32 @@
+fx2-cmix CPU transformer
+========================
+
+This tree includes the CPU-only 6M transformer inference implementation and
+the published quantized model asset supplied with the fx2-cmix transformer
+research bundle:
+
+  fx2-cmix-transformer by Vladimer Ivanov, July 24, 2026
+
+  src/third_party/fx2_transformer/
+  models/transformer6m/6m-q4-fp32.tfwc2
+
+The `target93` build uses the published architecture: the transformer
+replaces the online byte LSTM while PPMd, FXCM and the final mixers remain
+active on the canonical 205-symbol stream.
+The imported source is distributed under the GNU General Public License,
+version 3. Its original license is preserved as
+src/third_party/fx2_transformer/LICENSE.
+
+fx-deepmix model additions
+==========================
+
+This tree includes the GrammarMatch model and the DeepMix FXCM context
+additions (four new context maps and the ContextMap3 overflow fix) from the
+supplied fx-deepmix source tree:
+
+  fx-deepmix by Halvor Yttredal, July 28, 2026
+
+fx-deepmix is derived from cmix-lex and distributed under the GNU General
+Public License, version 3. This build always compiles the imported code in
+(-DFX4_DEEPMIX_CONTEXTS=1 -DFX4_GRAMMAR_MATCH=1 in the makefile); it is not
+profile-gated on this branch.
